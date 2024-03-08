@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Accordion({ header, children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,14 +7,11 @@ function Accordion({ header, children }) {
   const bodyRef = useRef(null);
   const headerRef = useRef(null);
 
-  const [maxHeight, setMaxHeight] = useState("fit-content");
+  const [maxHeight, setMaxHeight] = useState("68px");
   const [closeHeight, setCloseHeight] = useState(null);
   const [openHeight, setOpenHeight] = useState(null);
 
-  useEffect(() => {
-    isOpen ? setMaxHeight(openHeight) : setMaxHeight(closeHeight);
-  }, [isOpen]);
-
+  const [initRender, setInitRender] = useState(true);
   useEffect(() => {
     const accordionPaddingBottom = +window
       .getComputedStyle(accordionRef.current)
@@ -31,11 +28,18 @@ function Accordion({ header, children }) {
     setCloseHeight(headerHeight + accordionPaddingY + "px");
     setOpenHeight(headerHeight + bodyHeight + accordionPaddingY + "px");
   }, [header, children]);
-  console.log(maxHeight);
+  useEffect(() => {
+    if (initRender) {
+      setInitRender(false);
+      return;
+    }
+    isOpen ? setMaxHeight(openHeight) : setMaxHeight(closeHeight);
+  }, [isOpen, initRender]);
+
   return (
     <div
       style={{ maxHeight: maxHeight }}
-      className="overflow-hidden px-4 pt-2 pb-3  border-2 dark:border-secondary-dark transition-all duration-500"
+      className="overflow-hidden border-2 px-4 pb-3 pt-2 transition-all  duration-500   dark:border-secondary-dark"
       ref={accordionRef}
     >
       <div
