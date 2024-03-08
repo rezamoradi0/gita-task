@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
+import { AccordionProvider } from "../../context/accordionContext";
 function Accordion({ header, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,8 +22,8 @@ function Accordion({ header, children }) {
       .getPropertyValue("padding-top")
       .replace("px", "");
     const accordionPaddingY = accordionPaddingBottom + accordionPaddingTop;
-    const headerHeight = headerRef.current.offsetHeight;
-    const bodyHeight = bodyRef.current.offsetHeight;
+    const headerHeight = headerRef.current.clientHeight;
+    const bodyHeight = bodyRef.current.clientHeight;
 
     setCloseHeight(headerHeight + accordionPaddingY + "px");
     setOpenHeight(headerHeight + bodyHeight + accordionPaddingY + "px");
@@ -37,24 +37,26 @@ function Accordion({ header, children }) {
   }, [isOpen, initRender]);
 
   return (
-    <div
-      style={{ maxHeight: maxHeight }}
-      className="overflow-hidden border-2 px-4 pb-3 pt-2 transition-all  duration-500   dark:border-secondary-dark"
-      ref={accordionRef}
-    >
+    <AccordionProvider isOpen={isOpen}>
       <div
-        onClick={() => {
-          setIsOpen(!isOpen);
-        }}
-        className="flex"
-        ref={headerRef}
+        style={{ maxHeight: maxHeight }}
+        className="overflow-hidden rounded-lg border-2 px-4 py-2  transition-all   duration-500 dark:border-secondary-dark"
+        ref={accordionRef}
       >
-        {header}{" "}
+        <div
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+          className="flex"
+          ref={headerRef}
+        >
+          {header}{" "}
+        </div>
+        <div className="p-4" ref={bodyRef}>
+          {children}{" "}
+        </div>
       </div>
-      <div className="p-4" ref={bodyRef}>
-        {children}{" "}
-      </div>
-    </div>
+    </AccordionProvider>
   );
 }
 

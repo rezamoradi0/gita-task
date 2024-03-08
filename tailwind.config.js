@@ -6,6 +6,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+   
     extend: {
       keyframes: {
         wiggle: {
@@ -15,6 +16,18 @@ export default {
       },
       animation: {
         wiggle: "wiggle 200ms ease-in-out"
+      },
+      colors:{
+        'primary':{
+          light: '#334155',
+          DEFAULT: '#334155',
+          dark: '#27272a',
+        },
+        'secondary':{
+          light: '#111827',
+          DEFAULT: '#111827',
+          dark: '#cbd5e1',
+        }
       }
     },
   },
