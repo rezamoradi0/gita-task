@@ -1,10 +1,10 @@
+import UsersPanel from "./pages/UsersPanel"
 
 
 function App() {
 
   return (
-  <>
-  </>
+    <UsersPanel/>
   )
 }
 
