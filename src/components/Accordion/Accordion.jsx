@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { AccordionProvider } from "../../context/accordionContext";
+function getComputedPropValue(computedStyle, property) {
+  return Number(computedStyle.getPropertyValue(property).replace("px", ""));
+}
+
 function Accordion({ header, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -12,16 +16,31 @@ function Accordion({ header, children }) {
   const [openHeight, setOpenHeight] = useState(null);
 
   const [initRender, setInitRender] = useState(true);
+ 
   useEffect(() => {
-    const accordionPaddingBottom = +window
-      .getComputedStyle(accordionRef.current)
-      .getPropertyValue("padding-bottom")
-      .replace("px", "");
-    const accordionPaddingTop = +window
-      .getComputedStyle(accordionRef.current)
-      .getPropertyValue("padding-top")
-      .replace("px", "");
-    const accordionPaddingY = accordionPaddingBottom + accordionPaddingTop;
+    const computedStyle = window.getComputedStyle(accordionRef.current);
+    const accordionPaddingBottom = getComputedPropValue(
+      computedStyle,
+      "padding-bottom",
+    );
+    const accordionPaddingTop = getComputedPropValue(
+      computedStyle,
+      "padding-top",
+    );
+    const accordionBorderTop = getComputedPropValue(
+      computedStyle,
+      "border-top-width",
+    );
+
+    const accordionBorderBottom = getComputedPropValue(
+      computedStyle,
+      "border-bottom-width",
+    );
+    const accordionPaddingY =
+      accordionPaddingBottom +
+      accordionPaddingTop +
+      accordionBorderTop +
+      accordionBorderBottom;
     const headerHeight = headerRef.current.clientHeight;
     const bodyHeight = bodyRef.current.clientHeight;
 
