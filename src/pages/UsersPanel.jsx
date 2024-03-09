@@ -40,7 +40,6 @@ function UsersPanel() {
 
   const [actionsState, actionsDispatch] = useReducer(actionsReducer, initState);
   function actionsReducer(state, action) {
-    console.log(action);
     const id = action.payload;
     const data = getItem(id);
     switch (action.type) {
@@ -85,6 +84,7 @@ function UsersPanel() {
       return false;
     }
   }
+  
   return (
     <UsersPanelProvider
       data={data}
