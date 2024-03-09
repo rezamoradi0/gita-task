@@ -15,7 +15,7 @@ function TableRow({ data, actionHeader }) {
           {actionHeader}
         </div>
       ) : 
-        <TableActions className="col-span-2 row-span-1"/>
+        <TableActions className="col-span-2 row-span-1" id={data.id}/>
       }
     </div>
   );

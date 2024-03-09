@@ -1,9 +1,9 @@
 import { createContext, useContext } from "react";
 
 const UserPanelContext = createContext();
-function UsersPanelProvider(children, data, filterObj) {
+function UsersPanelProvider({children, data, filter,actionsDispatch}) {
   return (
-    <UserPanelContext.Provider value={{ data, filterObj }}>
+    <UserPanelContext.Provider value={{ data, filter,actionsDispatch }}>
       {children}
     </UserPanelContext.Provider>
   );

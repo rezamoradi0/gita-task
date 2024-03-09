@@ -9,9 +9,13 @@ function TableBody() {
     lastName: "نام خانوادگی",
     nationalId: "کد ملی",
   };
-  
+  if(!data){
+    return  <div>
+      empty
+    </div>;
+  }
   return (
-    <div className="flex flex-col" dir="rtl">
+    <div className="flex flex-col dark:border-secondary-dark border" dir="rtl">
       <TableRow data={tableHeaderData}  actionHeader="عملیات"/>
       {data.map((item) => {
         return <TableRow data={item} key={item.id} />;
