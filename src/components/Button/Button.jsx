@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
-function Button({ text, className = "" ,onClick}) {
+function Button({ text="", className = "" ,onClick}) {
   const [effect, setEffect] = useState(false);
   return (
     <button
