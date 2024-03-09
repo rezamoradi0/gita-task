@@ -12,10 +12,16 @@ export default {
         wiggle: {
           "0%, 100%": { transform : "scale(1)" ,opacity:"1"},
           "50%": { transform : "scale(1.05)" ,opacity:"0.9"}
+        },
+        hideAndSeek:{
+          "0%%":{transform:"translateY(-100%)"},
+          "50%":{transform:"translateY(100%)"},
+          "100%":{transform:"translateY(10%)"},
         }
       },
       animation: {
-        wiggle: "wiggle 200ms ease-in-out"
+        wiggle: "wiggle 200ms ease-in-out",
+        hideAndSeek:"hideAndSeek 500ms ease-in-out forwards"
       },
       colors:{
         'primary':{

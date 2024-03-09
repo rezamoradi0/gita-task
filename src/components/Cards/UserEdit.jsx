@@ -6,12 +6,14 @@ import PopupMini from "../Popup/PopupMini";
 
 function UserEdit({ data }) {
   const { actionsDispatch, updateUser } = useUserPanel();
+  
   const [firstName, setFirstName] = useState(data.firstName);
   const [lastName, setLastName] = useState(data.lastName);
   const [nationalId, setNationalId] = useState(data.nationalId);
 
   const [updated, setUpdated] = useState(null);
   const [canUpdate, setCanUpdate] = useState(false);
+
   function update() {
     if (updateUser({ firstName, lastName, nationalId, id: data.id })) {
       setUpdated("success");
@@ -19,16 +21,19 @@ function UserEdit({ data }) {
       setUpdated("failed");
     }
   }
-  useEffect(() => {
+  function checkChanged() {
     if (
-      firstName != data.firstName ||
-      lastName != data.lastName ||
-      nationalId != data.nationalId
-    ) {
-      setCanUpdate(true);
-    } else {
-      setCanUpdate(false);
-    }
+        firstName != data.firstName ||
+        lastName != data.lastName ||
+        nationalId != data.nationalId
+      ) {
+        setCanUpdate(true);
+      } else {
+        setCanUpdate(false);
+      }
+  }
+  useEffect(() => {
+    checkChanged();
   }, [firstName, lastName, nationalId]);
   return (
     <div className=" flex flex-col gap-4 p-4">

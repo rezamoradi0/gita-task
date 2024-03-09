@@ -13,7 +13,7 @@ function PopupMini({time=1500,className="",closeFun,text}) {
         };
     },[])
     return (
-        <div className={twMerge("absolute top-0 p-4 bg-secondary-dark text-primary-dark  right-2  border animate-hideAndSeek",className)}>
+        <div dir="rtl" className={twMerge("absolute top-0 p-4 bg-secondary-dark text-primary-dark  right-2  border animate-hideAndSeek",className)}>
       {text}
         </div>
     )
