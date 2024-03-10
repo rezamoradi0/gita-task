@@ -22,7 +22,9 @@ function TableActions({className,id}) {
       <Button onClick={()=>{
         actionHandler("map")
       }} className="fa-regular fa-map-location-dot col-span-1   row-span-1 p-1" />{" "}
-      <Button className="fa-regular fa-chart-line-up col-span-1   row-span-1 p-1" />
+      <Button onClick={()=>{
+        actionHandler("chart")
+      }} className="fa-regular fa-chart-line-up col-span-1   row-span-1 p-1" />
     </div>
   );
 }

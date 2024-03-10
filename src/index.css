@@ -38,3 +38,10 @@ body{
 .ol-viewport>div:last-child{
   display: none;
 }
+.recharts-default-tooltip{
+  border-radius: 10px;
+  direction: rtl;
+}
+.dark .recharts-rectangle.recharts-tooltip-cursor{
+  fill:#595959;
+}
