@@ -1,6 +1,5 @@
 import { createPortal } from "react-dom";
 import Button from "../Button/Button";
-import { twMerge } from "tailwind-merge";
 import { useEffect } from "react";
 
 function PopupFull({ children, closeFun, headerText }) {
