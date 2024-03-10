@@ -1,10 +1,23 @@
 import { createPortal } from "react-dom";
 import Button from "../Button/Button";
 import { twMerge } from "tailwind-merge";
+import { useEffect } from "react";
 
 function PopupFull({ children, closeFun, headerText }) {
 
-  
+  useEffect(()=>{
+    function onEscClose(event) {
+     if(event.key==="Escape"){
+      closeFun();
+     }
+    }
+    document.addEventListener("keydown",onEscClose);
+
+    return  ()=>{
+document.removeEventListener("keydown",onEscClose)
+    };
+  }
+  ,[])
   return createPortal(
     <div className="absolute left-0 top-0 flex h-screen w-screen flex-col items-center justify-center overflow-hidden">
       <div className="fixed left-1/2  overflow-hidden top-1/2 z-50 h-fit w-[90vw] max-w-screen-sm -translate-x-1/2  -translate-y-1/2 flex-col  justify-center rounded-lg  border p-2  md:p-8 lg:p-16  dark:bg-primary-dark dark:text-secondary-dark">
