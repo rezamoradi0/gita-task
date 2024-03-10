@@ -1,9 +1,10 @@
 import { twMerge } from "tailwind-merge"
 
-function UserInfo({data,className=""}) {
 
+
+function UserInfo({data,className=""}) {
     return (
-        <div dir="rtl" className={twMerge("flex flex-wrap p-4 gap-4",className)}>
+        <div dir="rtl" className={twMerge("flex flex-wrap md:flex-nowrap p-4 gap-4 items-center justify-center",className)}>
             <div className="flex flex-col items-center justify-between bg-gray-800 p-4 rounded-md gap-2">
             <p className="py-1 px-4 bg-slate-700 text-white rounded-lg">{data.id}</p>
             <p> آیدی </p>
@@ -17,12 +18,9 @@ function UserInfo({data,className=""}) {
             <p> نام </p>
             </div>
             <div className="flex flex-col items-center justify-between bg-gray-800 p-4 rounded-md gap-2">
-            <p className="py-1 px-4 bg-slate-700 text-white rounded-lg">{data.lastName}</p>
-            <p> نام خانوادگی </p>
+            <p className="py-1 px-4 bg-slate-700 text-white rounded-lg ">{data.lastName}</p>
+            <p className="whitespace-nowrap text-nowrap"> نام خانوادگی </p>
             </div>
-            {/* <p> نام : {data.firstName}</p>
-            <p> نام خانوادگی : {data.lastName}</p>
-            <p> کد ملی : {data.nationalId}</p> */}
         </div>
     )
 }

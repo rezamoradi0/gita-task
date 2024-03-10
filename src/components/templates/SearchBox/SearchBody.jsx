@@ -46,7 +46,7 @@ function SearchBody() {
           value={nationalId}
           setValue={setNationalId}
         />
-        <div>
+        <div className="flex justify-end items-center">
           <Button onClick={setSearchFilter} text={"جستوجو"} />
           <Button onClick={clearSearchFilter} text={"پاکسازی"} />
         </div>

@@ -1,8 +1,9 @@
 import { useUserPanel } from "../../context/usersPanelContext";
+import Button from "../Button/Button";
 import TableRow from "./TableRow";
 
 function TableBody() {
-  const { data, filter } = useUserPanel();
+  const { data, filter ,actionsDispatch} = useUserPanel();
   const tableHeaderData = {
     id: "آیدی",
     firstName: "نام",
@@ -16,17 +17,25 @@ function TableBody() {
       item.nationalId.trim().includes(filter.nationalId.trim())
     );
   }
-  if (!data) {
-    return <div>empty</div>;
-  }
+  const filteredData = data.filter((item) => checkFilters(item));
   return (
+    <div dir="rtl">
+          <Button text="افزودن" className="w-fit m-4" onClick={()=>{
+            actionsDispatch({type:"add"})
+          }}/>
     <div className="flex flex-col border dark:border-secondary-dark" dir="rtl">
+  
       <TableRow data={tableHeaderData} actionHeader="عملیات" />
-      {data
-        .filter((item) => checkFilters(item))
-        .map((item) => {
+      {filteredData.length === 0 ? (
+        <div className="px-5 py-3 text-center">
+          هیچ مورد مشابه ای یافت نشد !
+        </div>
+      ) : (
+        filteredData.map((item) => {
           return <TableRow data={item} key={item.id} />;
-        })}
+        })
+      )}
+    </div> 
     </div>
   );
 }

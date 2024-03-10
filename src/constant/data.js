@@ -3,7 +3,7 @@ const sampleData=[
       id: 1,
       firstName: "علی",
       lastName: "محمدی",
-      nationalId: "524021113",
+      nationalId: "5652211113",
       position: { latitude: 35.69672648316882, longitude: 51.36281969540723 },
       chartData: {
         data: [
@@ -62,9 +62,9 @@ const sampleData=[
     },
     {
       id: 2,
-      firstName: "علی",
-      lastName: "محمدی",
-      nationalId: "524021113",
+      firstName: "حسین",
+      lastName: "مرادی",
+      nationalId: "524021114",
       position: { latitude: 35.69672648316882, longitude: 51.36281969540723 },
       chartData: {
         data: [
@@ -217,9 +217,9 @@ const sampleData=[
     },
     {
       id: 3,
-      firstName: "علی",
-      lastName: "محمدی",
-      nationalId: "524021113",
+      firstName: "محمد",
+      lastName: "رضایی",
+      nationalId: "522151113",
       position: { latitude: 35.69672648316882, longitude: 51.36281969540723 },
       chartData: {
         data: [
@@ -278,9 +278,9 @@ const sampleData=[
     },
     {
       id: 4,
-      firstName: "علی",
-      lastName: "محمدی",
-      nationalId: "524021113",
+      firstName: "اصغر",
+      lastName: "شریفی",
+      nationalId: "524125113",
       position: { latitude: 35.69672648316882, longitude: 51.36281969540723 },
       chartData: {
         data: [
@@ -339,9 +339,9 @@ const sampleData=[
     },
     {
       id: 5,
-      firstName: "علی",
-      lastName: "محمدی",
-      nationalId: "524021113",
+      firstName: "حسن",
+      lastName: "الهی",
+      nationalId: "565851113",
       position: { latitude: 35.69672648316882, longitude: 51.36281969540723 },
       chartData: {
         data: [
@@ -400,9 +400,9 @@ const sampleData=[
     },
     {
       id: 6,
-      firstName: "علی",
+      firstName: "سجاد",
       lastName: "محمدی",
-      nationalId: "524021113",
+      nationalId: "524047613",
       position: { latitude: 35.69672648316882, longitude: 51.36281969540723 },
       chartData: {
         data: [
@@ -461,9 +461,9 @@ const sampleData=[
     },
     {
       id: 7,
-      firstName: "علی",
+      firstName: "رضا",
       lastName: "محمدی",
-      nationalId: "524021113",
+      nationalId: "524023113",
       position: { latitude: 35.69672648316882, longitude: 51.36281969540723 },
       chartData: {
         data: [
@@ -523,8 +523,8 @@ const sampleData=[
     {
       id: 8,
       firstName: "علی",
-      lastName: "محمدی",
-      nationalId: "524021113",
+      lastName: "رضایی",
+      nationalId: "524024763",
       position: { latitude: 35.69672648316882, longitude: 51.36281969540723 },
       chartData: {
         data: [
@@ -583,9 +583,9 @@ const sampleData=[
     },
     {
       id: 9,
-      firstName: "علی",
-      lastName: "محمدی",
-      nationalId: "524021113",
+      firstName: "محمدرضا",
+      lastName: "حسنی",
+      nationalId: "524122113",
       position: { latitude: 35.69672648316882, longitude: 51.36281969540723 },
       chartData: {
         data: [
@@ -644,9 +644,9 @@ const sampleData=[
     },
     {
       id: 10,
-      firstName: "علی",
-      lastName: "محمدی",
-      nationalId: "524021113",
+      firstName: "جعفر",
+      lastName: "صفری",
+      nationalId: "52499813",
       position: { latitude: 35.69672648316882, longitude: 51.36281969540723 },
       chartData: {
         data: [
@@ -702,129 +702,7 @@ const sampleData=[
         XAxisKey: "date",
         barKey: "login",
       },
-    },
-    {
-      id: 11,
-      firstName: "علی",
-      lastName: "محمدی",
-      nationalId: "524021113",
-      position: { latitude: 35.69672648316882, longitude: 51.36281969540723 },
-      chartData: {
-        data: [
-          {
-            date: "12/01",
-            login: 15,
-          },
-          {
-            date: "12/02",
-            login: 23,
-          },
-          {
-            date: "12/03",
-            login: 34,
-          },
-          {
-            date: "12/04",
-            login: 35,
-          },
-          {
-            date: "12/05",
-            login: 15,
-          },
-          {
-            date: "12/06",
-            login: 23,
-          },
-          {
-            date: "12/07",
-            login: 34,
-          },
-          {
-            date: "12/08",
-            login: 35,
-          },
-          {
-            date: "12/09",
-            login: 15,
-          },
-          {
-            date: "12/10",
-            login: 23,
-          },
-          {
-            date: "12/11",
-            login: 34,
-          },
-          {
-            date: "12/12",
-            login: 35,
-          },
-        ],
-        XAxisKey: "date",
-        barKey: "login",
-      },
-    },
-    {
-      id: 12,
-      firstName: "علی",
-      lastName: "محمدی",
-      nationalId: "524021113",
-      position: { latitude: 35.69672648316882, longitude: 51.36281969540723 },
-      chartData: {
-        data: [
-          {
-            date: "12/01",
-            login: 15,
-          },
-          {
-            date: "12/02",
-            login: 23,
-          },
-          {
-            date: "12/03",
-            login: 34,
-          },
-          {
-            date: "12/04",
-            login: 35,
-          },
-          {
-            date: "12/05",
-            login: 15,
-          },
-          {
-            date: "12/06",
-            login: 23,
-          },
-          {
-            date: "12/07",
-            login: 34,
-          },
-          {
-            date: "12/08",
-            login: 35,
-          },
-          {
-            date: "12/09",
-            login: 15,
-          },
-          {
-            date: "12/10",
-            login: 23,
-          },
-          {
-            date: "12/11",
-            login: 34,
-          },
-          {
-            date: "12/12",
-            login: 35,
-          },
-        ],
-        XAxisKey: "date",
-        barKey: "login",
-      },
-    },
+    }
   ];
 
   export {sampleData}

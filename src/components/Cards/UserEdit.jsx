@@ -46,8 +46,8 @@ function UserEdit({ data }) {
         />
         <TextInput label="کد ملی" setValue={setNationalId} value={nationalId} />
       </div>
-      <div className="flex justify-between">
-        <Button
+      <div className="flex justify-start">
+        <Button className="dark:bg-rose-950"
           onClick={() => {
             actionsDispatch({ type: "clear" });
           }}

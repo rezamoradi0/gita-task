@@ -13,6 +13,7 @@ import UserMap from "../components/Cards/UserMap";
 import UserChart from "../components/Cards/UserChart";
 
 import { sampleData } from "../constant/data";
+import UserAdd from "../components/Cards/UserAdd";
 const initState = {
   component: null,
   headerText: "headerText",
@@ -34,7 +35,7 @@ function UsersPanel() {
 
   const [actionsState, actionsDispatch] = useReducer(actionsReducer, initState);
   function actionsReducer(state, action) {
-    const id = action.payload;
+    const id = action.payload || null;
     const data = getItem(id);
     switch (action.type) {
       case "clear":
@@ -64,6 +65,11 @@ function UsersPanel() {
           component: <UserChart data={data} />,
           headerText: " آمار کاربر",
         };
+      case "add":
+        return {
+          component: <UserAdd />,
+          headerText: " افزودن کاربر جدید",
+        };
       default:
         return state;
     }
@@ -86,7 +92,22 @@ function UsersPanel() {
       return false;
     }
   }
-
+  function addUser({ firstName, lastName, nationalId }) {
+    const newId = getLastId() + 1;
+    const newUser={firstName,lastName,nationalId,id:newId}
+    setData([...data,newUser]);
+    return  true;
+  }
+  function getLastId() {
+    let maxId = 0;
+    for (let index = 0; index < data.length; index++) {
+      const id = data[index].id;
+      if (id > maxId) {
+        maxId = id;
+      }
+    }
+    return  maxId;
+  }
   return (
     <UsersPanelProvider
       data={data}
@@ -95,8 +116,9 @@ function UsersPanel() {
       actionsDispatch={actionsDispatch}
       updateUser={updateUser}
       deleteUser={deleteUser}
+      addUser={addUser}
     >
-      <div className="flex min-h-screen flex-col gap-y-8 px-16 py-4 text-secondary-dark dark:bg-primary-dark">
+      <div className="flex min-h-screen flex-col gap-y-8 px-2 py-4 text-secondary-dark md:px-16 dark:bg-primary-dark">
         <Accordion header={<SearchHeader />}>
           <SearchBody />
         </Accordion>

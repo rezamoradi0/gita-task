@@ -1,9 +1,28 @@
 import { createContext, useContext } from "react";
 
 const UserPanelContext = createContext();
-function UsersPanelProvider({children, data,actionsDispatch,updateUser,deleteUser,setFilter,filter}) {
+function UsersPanelProvider({
+  children,
+  data,
+  actionsDispatch,
+  updateUser,
+  deleteUser,
+  setFilter,
+  filter,
+  addUser,
+}) {
   return (
-    <UserPanelContext.Provider value={{ data,actionsDispatch ,updateUser,deleteUser,setFilter,filter}}>
+    <UserPanelContext.Provider
+      value={{
+        data,
+        actionsDispatch,
+        updateUser,
+        deleteUser,
+        setFilter,
+        filter,
+        addUser,
+      }}
+    >
       {children}
     </UserPanelContext.Provider>
   );
@@ -15,4 +34,4 @@ function useUserPanel() {
   return context;
 }
 
-export { UsersPanelProvider,useUserPanel };
+export { UsersPanelProvider, useUserPanel };
