@@ -2,18 +2,16 @@ import NeshanMap from "@neshan-maps-platform/react-openlayers";
 import Button from "../Button/Button";
 import { useState } from "react";
 
+  const maxZoom=18;
+  const minZoom=10;
 function Map({
-  position = { latitude: 35.69672648316882, longitude: 51.36281969540723 },
+  position 
 }) {
   const [reset, setReset] = useState(false);
   const [zoom, setZoom] = useState(16);
-  const maxZoom=18;
-  const minZoom=10;
+
  
   function zoomHandler(positive) {
- 
-    console.log(zoom>minZoom)
-    console.log(positive)
     if(positive>0&&zoom<maxZoom){
   
         setZoom(zoom=>zoom+1)

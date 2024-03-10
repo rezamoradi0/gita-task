@@ -1,7 +1,9 @@
-function UserInfo({data}) {
+import { twMerge } from "tailwind-merge"
+
+function UserInfo({data,className=""}) {
 
     return (
-        <div dir="rtl" className="flex flex-wrap p-4 gap-4">
+        <div dir="rtl" className={twMerge("flex flex-wrap p-4 gap-4",className)}>
             <div className="flex flex-col items-center justify-between bg-gray-800 p-4 rounded-md gap-2">
             <p className="py-1 px-4 bg-slate-700 text-white rounded-lg">{data.id}</p>
             <p> آیدی </p>

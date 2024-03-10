@@ -9,6 +9,7 @@ import PopupFull from "../components/Popup/PopupFull";
 import UserInfo from "../components/Cards/UserInfo";
 import UserEdit from "../components/Cards/UserEdit";
 import UserDelete from "../components/Cards/UserDelete";
+import UserMap from "../components/Cards/UserMap";
 
 const initState = {
   component: null,
@@ -17,18 +18,18 @@ const initState = {
 
 function UsersPanel() {
   const [data, setData] = useState([
-    { id: 1, firstName: "علی", lastName: "محمدی", nationalId: "524021113" },
-    { id: 2, firstName: "علی", lastName: "محمدی", nationalId: "524021113" },
-    { id: 3, firstName: "علی", lastName: "محمدی", nationalId: "524021113" },
-    { id: 4, firstName: "علی", lastName: "محمدی", nationalId: "524021113" },
-    { id: 5, firstName: "علی", lastName: "محمدی", nationalId: "524021113" },
-    { id: 6, firstName: "علی", lastName: "محمدی", nationalId: "524021113" },
-    { id: 7, firstName: "علی", lastName: "محمدی", nationalId: "524021113" },
-    { id: 8, firstName: "علی", lastName: "محمدی", nationalId: "524021113" },
-    { id: 9, firstName: "علی", lastName: "محمدی", nationalId: "524021113" },
-    { id: 10, firstName: "علی", lastName: "محمدی", nationalId: "524021113" },
-    { id: 11, firstName: "علی", lastName: "محمدی", nationalId: "524021113" },
-    { id: 12, firstName: "علی", lastName: "محمدی", nationalId: "524021113" },
+    { id: 1, firstName: "علی", lastName: "محمدی", nationalId: "524021113",position: { latitude: 35.69672648316882, longitude: 51.36281969540723 }},
+    { id: 2, firstName: "علی", lastName: "محمدی", nationalId: "524021113" ,position: { latitude: 35.69672648316882, longitude: 51.36281969540723 }},
+    { id: 3, firstName: "علی", lastName: "محمدی", nationalId: "524021113" ,position: { latitude: 35.69672648316882, longitude: 51.36281969540723 }},
+    { id: 4, firstName: "علی", lastName: "محمدی", nationalId: "524021113" ,position: { latitude: 35.69672648316882, longitude: 51.36281969540723 }},
+    { id: 5, firstName: "علی", lastName: "محمدی", nationalId: "524021113" ,position: { latitude: 35.69672648316882, longitude: 51.36281969540723 }},
+    { id: 6, firstName: "علی", lastName: "محمدی", nationalId: "524021113" ,position: { latitude: 35.69672648316882, longitude: 51.36281969540723 }},
+    { id: 7, firstName: "علی", lastName: "محمدی", nationalId: "524021113" ,position: { latitude: 35.69672648316882, longitude: 51.36281969540723 }},
+    { id: 8, firstName: "علی", lastName: "محمدی", nationalId: "524021113" ,position: { latitude: 35.69672648316882, longitude: 51.36281969540723 }},
+    { id: 9, firstName: "علی", lastName: "محمدی", nationalId: "524021113" ,position: { latitude: 35.69672648316882, longitude: 51.36281969540723 }},
+    { id: 10, firstName: "علی", lastName: "محمدی", nationalId: "524021113" ,position: { latitude: 35.69672648316882, longitude: 51.36281969540723 }},
+    { id: 11, firstName: "علی", lastName: "محمدی", nationalId: "524021113" ,position: { latitude: 35.69672648316882, longitude: 51.36281969540723 }},
+    { id: 12, firstName: "علی", lastName: "محمدی", nationalId: "524021113" ,position: { latitude: 35.69672648316882, longitude: 51.36281969540723 }},
   ]);
   const [filter, setFilter] = useState({});
 
@@ -57,8 +58,8 @@ function UsersPanel() {
         };
       case "delete":
         return { component: <UserDelete data={data} />,headerText:"پاک کردن کاربر" };
-      // case "map":
-      //   return { component: <UserInfo />, userId: action.payload };
+      case "map":
+        return { component: <UserMap  data={data}/> };
       // case "chart":
       //   return { component: <UserInfo />, userId: action.payload };
       default:
@@ -84,7 +85,7 @@ function UsersPanel() {
       return false;
     }
   }
-  
+
   return (
     <UsersPanelProvider
       data={data}
@@ -94,6 +95,7 @@ function UsersPanel() {
       deleteUser={deleteUser}
     >
       <div className="flex min-h-screen flex-col gap-y-8 px-16 py-4 text-secondary-dark dark:bg-primary-dark">
+        
         <Accordion header={<SearchHeader />}>
           <SearchBody />
         </Accordion>

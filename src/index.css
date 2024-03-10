@@ -35,3 +35,6 @@ body{
     position: relative;
     overflow-x: hidden;
 }
+.ol-viewport>div:last-child{
+  display: none;
+}
