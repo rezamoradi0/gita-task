@@ -135,6 +135,100 @@ function UsersPanel() {
           {
             date: "12/12",
             login: 35,
+          }, {
+            date: "12/01",
+            login: 15,
+          },
+          {
+            date: "12/02",
+            login: 23,
+          },
+          {
+            date: "12/03",
+            login: 34,
+          },
+          {
+            date: "12/04",
+            login: 35,
+          },
+          {
+            date: "12/05",
+            login: 15,
+          },
+          {
+            date: "12/06",
+            login: 23,
+          },
+          {
+            date: "12/07",
+            login: 34,
+          },
+          {
+            date: "12/08",
+            login: 35,
+          },
+          {
+            date: "12/09",
+            login: 15,
+          },
+          {
+            date: "12/10",
+            login: 23,
+          },
+          {
+            date: "12/11",
+            login: 34,
+          },
+          {
+            date: "12/12",
+            login: 35,
+          }, {
+            date: "12/01",
+            login: 15,
+          },
+          {
+            date: "12/02",
+            login: 23,
+          },
+          {
+            date: "12/03",
+            login: 34,
+          },
+          {
+            date: "12/04",
+            login: 35,
+          },
+          {
+            date: "12/05",
+            login: 15,
+          },
+          {
+            date: "12/06",
+            login: 23,
+          },
+          {
+            date: "12/07",
+            login: 34,
+          },
+          {
+            date: "12/08",
+            login: 35,
+          },
+          {
+            date: "12/09",
+            login: 15,
+          },
+          {
+            date: "12/10",
+            login: 23,
+          },
+          {
+            date: "12/11",
+            login: 34,
+          },
+          {
+            date: "12/12",
+            login: 35,
           },
         ],
         XAxisKey: "date",

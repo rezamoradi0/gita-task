@@ -14,7 +14,7 @@ import CustomTooltip from "./CustomTooltip";
 function LogChart({data, XAxisKey, barKey}) {
  
   return (
-    <div className="h-96 max-w-screen-sm w-screen ">
+    <div className="h-96 max-w-screen-sm w-[90vw] ">
       <ResponsiveContainer>
         <BarChart
           width={300}
