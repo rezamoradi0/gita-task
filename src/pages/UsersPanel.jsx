@@ -877,9 +877,9 @@ function UsersPanel() {
           headerText: "پاک کردن کاربر",
         };
       case "map":
-        return { component: <UserMap data={data} /> };
+        return { component: <UserMap data={data} />,       headerText: "موقعیت کاربر", };
       case "chart":
-        return { component: <UserChart data={data} /> };
+        return { component: <UserChart data={data} />    ,   headerText: " آمار کاربر", };
       default:
         return state;
     }
