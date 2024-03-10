@@ -1,5 +1,6 @@
 import { createPortal } from "react-dom";
 import Button from "../Button/Button";
+import { twMerge } from "tailwind-merge";
 
 function PopupFull({ children, closeFun, headerText }) {
   return createPortal(
@@ -20,7 +21,7 @@ function PopupFull({ children, closeFun, headerText }) {
         className="fixed left-0 top-0 z-40 h-full w-full bg-black opacity-45 "
       ></div>
     </div>,
-    document.body,
+    document.getElementById("root"),
   );
 }
 
