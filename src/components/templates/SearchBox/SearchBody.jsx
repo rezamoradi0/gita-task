@@ -9,12 +9,21 @@ function SearchBody() {
   const [nationalId, setNationalId] = useState("");
 
   const { setFilter } = useUserPanel();
-  function searchHeader() {
-    console.log("HERE");
+  function setSearchFilter() {
     setFilter({
       firstName,
       lastName,
       nationalId,
+    });
+  }
+  function clearSearchFilter() {
+    setFirstName("");
+    setLastName("");
+    setNationalId("");
+    setFilter({
+      firstName: "",
+      lastName: "",
+      nationalId: "",
     });
   }
   return (
@@ -22,7 +31,7 @@ function SearchBody() {
       <hr className="my-4" />
       <div
         dir="rtl"
-        className="flex flex-wrap  items-center justify-center gap-4 py-2 "
+        className="flex flex-wrap  items-center justify-center gap-4 py-2  [&>*]:w-full [&>*]:sm:w-fit"
       >
         <TextInput label="نام" value={firstName} setValue={setFirstName} />
         <TextInput
@@ -37,10 +46,10 @@ function SearchBody() {
           value={nationalId}
           setValue={setNationalId}
         />
-        <Button
-          onClick={searchHeader}
-          text={"جستوجو"}
-        />
+        <div>
+          <Button onClick={setSearchFilter} text={"جستوجو"} />
+          <Button onClick={clearSearchFilter} text={"پاکسازی"} />
+        </div>
       </div>
     </>
   );
