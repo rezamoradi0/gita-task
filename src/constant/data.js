@@ -9,15 +9,15 @@ const sampleData=[
         data: [
           {
             date: "12/01",
-            login: 15,
+            login: 12,
           },
           {
             date: "12/02",
-            login: 23,
+            login: 43,
           },
           {
             date: "12/03",
-            login: 34,
+            login: 23,
           },
           {
             date: "12/04",
@@ -33,15 +33,15 @@ const sampleData=[
           },
           {
             date: "12/07",
-            login: 34,
+            login: 44,
           },
           {
             date: "12/08",
-            login: 35,
+            login: 32,
           },
           {
             date: "12/09",
-            login: 15,
+            login: 12,
           },
           {
             date: "12/10",
@@ -49,11 +49,11 @@ const sampleData=[
           },
           {
             date: "12/11",
-            login: 34,
+            login: 33,
           },
           {
             date: "12/12",
-            login: 35,
+            login: 55,
           },
         ],
         XAxisKey: "date",
@@ -78,7 +78,7 @@ const sampleData=[
           },
           {
             date: "12/03",
-            login: 34,
+            login: 12,
           },
           {
             date: "12/04",
@@ -86,11 +86,11 @@ const sampleData=[
           },
           {
             date: "12/05",
-            login: 15,
+            login: 33,
           },
           {
             date: "12/06",
-            login: 23,
+            login: 44,
           },
           {
             date: "12/07",
@@ -98,7 +98,7 @@ const sampleData=[
           },
           {
             date: "12/08",
-            login: 35,
+            login: 12,
           },
           {
             date: "12/09",
@@ -106,7 +106,7 @@ const sampleData=[
           },
           {
             date: "12/10",
-            login: 23,
+            login: 43,
           },
           {
             date: "12/11",
@@ -114,14 +114,14 @@ const sampleData=[
           },
           {
             date: "12/12",
-            login: 35,
+            login: 23,
           }, {
             date: "12/01",
             login: 15,
           },
           {
             date: "12/02",
-            login: 23,
+            login: 54,
           },
           {
             date: "12/03",
@@ -133,7 +133,7 @@ const sampleData=[
           },
           {
             date: "12/05",
-            login: 15,
+            login: 23,
           },
           {
             date: "12/06",
@@ -145,11 +145,11 @@ const sampleData=[
           },
           {
             date: "12/08",
-            login: 35,
+            login: 36,
           },
           {
             date: "12/09",
-            login: 15,
+            login: 23,
           },
           {
             date: "12/10",
@@ -164,7 +164,7 @@ const sampleData=[
             login: 35,
           }, {
             date: "12/01",
-            login: 15,
+            login: 12,
           },
           {
             date: "12/02",

@@ -23,9 +23,9 @@ function TableBody() {
           <Button text="افزودن" className="w-fit m-4" onClick={()=>{
             actionsDispatch({type:"add"})
           }}/>
-    <div className="flex flex-col border dark:border-secondary-dark" dir="rtl">
+    <div className="flex flex-col  border rounded-lg overflow-hidden dark:border-secondary-dark" dir="rtl">
   
-      <TableRow data={tableHeaderData} actionHeader="عملیات" />
+      <TableRow  className="dark:bg-gray-700" data={tableHeaderData} actionHeader="عملیات" />
       {filteredData.length === 0 ? (
         <div className="px-5 py-3 text-center">
           هیچ مورد مشابه ای یافت نشد !

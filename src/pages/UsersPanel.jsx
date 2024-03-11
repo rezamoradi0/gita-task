@@ -126,7 +126,7 @@ function UsersPanel() {
       deleteUser={deleteUser}
       addUser={addUser}
     >
-      <div className="flex min-h-screen flex-col gap-y-8 px-2 py-4 text-secondary-dark md:px-16 dark:bg-primary-dark">
+      <div className="flex min-h-screen flex-col gap-y-8 px-2 py-4 text-secondary-dark md:px-16 dark:bg-primary-dark text-xs sm:text-base">
         <Accordion header={<SearchHeader />}>
           <SearchBody />
         </Accordion>
