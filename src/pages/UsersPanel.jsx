@@ -12,9 +12,8 @@ import UserDelete from "../components/Cards/UserDelete";
 import UserMap from "../components/Cards/UserMap";
 import UserChart from "../components/Cards/UserChart";
 
-import { sampleData } from "../constant/data";
+import { sampleData, sampleChartData, samplePosition } from "../constant/data";
 import UserAdd from "../components/Cards/UserAdd";
-import NumberInput from "../components/Input/NumberInput";
 const initState = {
   component: null,
   headerText: "headerText",
@@ -95,9 +94,16 @@ function UsersPanel() {
   }
   function addUser({ firstName, lastName, nationalId }) {
     const newId = getLastId() + 1;
-    const newUser={firstName,lastName,nationalId,id:newId}
-    setData([...data,newUser]);
-    return  true;
+    const newUser = {
+      firstName,
+      lastName,
+      nationalId,
+      id: newId,
+      chartData: sampleChartData,
+      position: samplePosition,
+    };
+    setData([...data, newUser]);
+    return true;
   }
   function getLastId() {
     let maxId = 0;
@@ -107,7 +113,7 @@ function UsersPanel() {
         maxId = id;
       }
     }
-    return  maxId;
+    return maxId;
   }
 
   return (
@@ -120,7 +126,6 @@ function UsersPanel() {
       deleteUser={deleteUser}
       addUser={addUser}
     >
-
       <div className="flex min-h-screen flex-col gap-y-8 px-2 py-4 text-secondary-dark md:px-16 dark:bg-primary-dark">
         <Accordion header={<SearchHeader />}>
           <SearchBody />
