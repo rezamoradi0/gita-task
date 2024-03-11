@@ -3,6 +3,7 @@ import { useUserPanel } from "../../context/usersPanelContext";
 import Button from "../Button/Button";
 import TextInput from "../Input/TextInput";
 import PopupMini from "../Popup/PopupMini";
+import NumberInput from "../Input/NumberInput";
 
 function UserAdd() {
   const { addUser, actionsDispatch } = useUserPanel();
@@ -33,12 +34,14 @@ function UserAdd() {
     <div className="flex flex-col gap-y-2 py-4">
       <TextInput label="نام" value={firstName} setValue={setFirstName} />
       <TextInput label="نام خانوادگی" value={lastName} setValue={setLastName} />
-      <TextInput
+      <NumberInput
         type="text"
         inputmode="numeric"
         label="کد ملی"
         value={nationalId}
         setValue={setNationalId}
+        maxLength={10}
+        
       />
       <div className="my-4 flex w-full items-center justify-start">
         <Button text="لغو" className="dark:bg-rose-950" onClick={close} />

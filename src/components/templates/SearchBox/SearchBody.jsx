@@ -2,6 +2,7 @@ import { useState } from "react";
 import TextInput from "../../Input/TextInput";
 import Button from "../../Button/Button";
 import { useUserPanel } from "../../../context/usersPanelContext";
+import NumberInput from "../../Input/NumberInput";
 
 function SearchBody() {
   const [firstName, setFirstName] = useState("");
@@ -39,13 +40,15 @@ function SearchBody() {
           value={lastName}
           setValue={setLastName}
         />
-        <TextInput
-          type="text"
-          inputmode="numeric"
-          label="کد ملی"
-          value={nationalId}
-          setValue={setNationalId}
-        />
+      <NumberInput
+        type="text"
+        inputmode="numeric"
+        label="کد ملی"
+        value={nationalId}
+        setValue={setNationalId}
+        maxLength={10}
+        
+      />
         <div className="flex justify-end items-center">
           <Button onClick={setSearchFilter} text={"جستوجو"} />
           <Button onClick={clearSearchFilter} text={"پاکسازی"} />

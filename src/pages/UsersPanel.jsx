@@ -14,6 +14,7 @@ import UserChart from "../components/Cards/UserChart";
 
 import { sampleData } from "../constant/data";
 import UserAdd from "../components/Cards/UserAdd";
+import NumberInput from "../components/Input/NumberInput";
 const initState = {
   component: null,
   headerText: "headerText",
@@ -108,6 +109,7 @@ function UsersPanel() {
     }
     return  maxId;
   }
+
   return (
     <UsersPanelProvider
       data={data}
@@ -118,6 +120,7 @@ function UsersPanel() {
       deleteUser={deleteUser}
       addUser={addUser}
     >
+
       <div className="flex min-h-screen flex-col gap-y-8 px-2 py-4 text-secondary-dark md:px-16 dark:bg-primary-dark">
         <Accordion header={<SearchHeader />}>
           <SearchBody />
