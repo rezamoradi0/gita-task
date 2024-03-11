@@ -25,7 +25,7 @@ function TableBody() {
           }}/>
     <div className="flex flex-col  border rounded-lg overflow-hidden dark:border-secondary-dark" dir="rtl">
   
-      <TableRow  className="dark:bg-gray-700" data={tableHeaderData} actionHeader="عملیات" />
+      <TableRow  className="dark:bg-gray-700 font-bold" data={tableHeaderData} actionHeader="عملیات" />
       {filteredData.length === 0 ? (
         <div className="px-5 py-3 text-center">
           هیچ مورد مشابه ای یافت نشد !

@@ -1,7 +1,7 @@
 function TextInput({
   label = "label",
   type = "text",
-  inputmode = "none",
+  inputmode = "text",
   value,
   setValue,
   placeholder = "",
